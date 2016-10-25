@@ -1,19 +1,15 @@
-
-
-const sports = [
-  { id: 1, title: 'football'},
-  { id: 2, title: 'tennis'},
-  { id: 3, title: 'basketball'},
-  { id: 4, title: 'cricket'},
-  { id: 5, title: 'baseball'},
-];
+const {
+  allSports,
+  getCompetitionsBySportId,
+}  = require('./sportsRepository');
 
 const getSports = (req, res) => {
-  res.status(200).json(sports);
+  res.status(200).json(allSports);
 };
 
 const getCompetitionsForSport = (req, res) => {
-  res.sendStatus(201);
+  const sportId = +req.params.id;
+  res.status(200).json(getCompetitionsBySportId(sportId));
 };
 
 module.exports = {
