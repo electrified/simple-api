@@ -1,9 +1,8 @@
 const eventsRouter = require('express').Router();
+const { allEvents } = require('./eventsRepository');
 
-const {
-  getevents,
-} = require('./eventsControllers');
-
-eventsRouter.get('/', getevents);
+eventsRouter.get('/', (req, res) => {
+  res.status(200).json(allEvents);
+});
 
 module.exports = eventsRouter;

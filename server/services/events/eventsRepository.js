@@ -1,4 +1,4 @@
-const allCompetitions = require('../competitions/competitionsRepository').allCompetitions;
+const {allCompetitions} = require('../competitions/competitionsRepository');
 
 /**
  * Generate events

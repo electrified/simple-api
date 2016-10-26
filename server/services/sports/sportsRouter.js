@@ -1,11 +1,16 @@
 const sportsRouter = require('express').Router();
-
 const {
-  getSports,
-  getCompetitionsForSport,
-} = require('./sportsControllers');
+  allSports,
+  getCompetitionsBySportId,
+} = require('./sportsRepository');
 
-sportsRouter.get('/', getSports);
-sportsRouter.get('/:id/competitions', getCompetitionsForSport);
+sportsRouter.get('/', (req, res) => {
+  res.status(200).json(allSports);
+});
+
+sportsRouter.get('/:id/competitions', (req, res) => {
+  const sportId = +req.params.id;
+  res.status(200).json(getCompetitionsBySportId(sportId));
+});
 
 module.exports = sportsRouter;

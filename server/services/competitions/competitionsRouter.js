@@ -1,9 +1,8 @@
 const competitionsRouter = require('express').Router();
+const {allCompetitions} = require('./competitionsRepository');
 
-const {
-  getCompetitions,
-} = require('./competitionsControllers');
-
-competitionsRouter.get('/', getCompetitions);
+competitionsRouter.get('/', (req, res) => {
+  res.status(200).json(allCompetitions);
+});
 
 module.exports = competitionsRouter;
