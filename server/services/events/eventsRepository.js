@@ -21,12 +21,22 @@ allCompetitions.forEach((competition, competitionIndex) => { // each competition
     });
 
     id++;
-    daysToAdd++;
+
+    // skip 2 days from now in order to mock a disabled date.
+    (daysToAdd === 2) ?
+      daysToAdd = daysToAdd + 2 : daysToAdd++;
 
     daysToAdd === 7 && (daysToAdd = 0);
   });
 });
 
+const eventsByCompetitions = (competitions) => {
+  return allEvents.filter(event => {
+    return competitions.indexOf(event.competionId) !== -1;
+  });
+}
+
 module.exports = {
   allEvents,
+  eventsByCompetitions,
 };

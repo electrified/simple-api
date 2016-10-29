@@ -1,8 +1,10 @@
 const eventsRouter = require('express').Router();
-const { allEvents } = require('./eventsRepository');
+const { allEvents, eventsByCompetitions } = require('./eventsRepository');
 
-eventsRouter.get('/', (req, res) => {
-  res.status(200).json(allEvents);
+eventsRouter.get('/:ids', (req, res) => {
+  const competitionIds = req.params.ids;
+  res.header('Access-Control-Allow-Origin', "*");
+  res.status(200).json(eventsByCompetitions(competitionIds));
 });
 
 module.exports = eventsRouter;
