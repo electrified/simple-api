@@ -1,15 +1,36 @@
-const allCompetitions = [
-  { id: 1, title: 'Premier League', sportId: 1},
-  { id: 2, title: 'Championship', sportId: 1},
-  { id: 3, title: 'League 1', sportId: 1},
-  { id: 4, title: 'League 2', sportId: 1},
-  { id: 5, title: 'Wimbledon', sportId: 2},
-  { id: 6, title: 'Queens', sportId: 2},
-  { id: 7, title: 'US Open', sportId: 2},
-  { id: 8, title: 'County Championship', sportId: 4},
-  { id: 9, title: '20/20 Bash', sportId: 4},
-];
+'use strict';
 
-module.exports = {
-  allCompetitions,
+const competitions = require('../rawData').competitions;
+const events = require('../rawData').events;
+
+const getCompetitions = () => {
+  /**
+   * All competitions, with event count in order to enable/disable toggle. 
+   */ 
+  return competitions.map(c => {
+    return Object.assign({}, c, {
+      eventCount: events
+                    .filter(e => e.competitionId === c.id)
+                    .length
+    });
+  })
+}
+
+const getCompetition = (id) => {
+  /**
+   * Competition with events and markets 
+   */ 
+  return competitions
+    .filter(c => c.id === id)
+    .map(c => {
+      return Object.assign({}, c, {
+        events: events
+                  .filter(e => e.competitionId === c.id)                      
+    });
+  })
+}
+
+module.exports = {  
+  getCompetitions,
+  getCompetition,
 }

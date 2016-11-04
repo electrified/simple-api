@@ -1,17 +1,23 @@
-const allCompetitions = require('../competitions/competitionsRepository').allCompetitions;
+'use strict';
+const competitions = require('../rawData').competitions;
+const sports = require('../rawData').sports;
+const events = require('../rawData').events;
 
-const allSports = [
-  { id: 1, title: 'football'},
-  { id: 2, title: 'tennis'},
-  { id: 3, title: 'basketball'},
-  { id: 4, title: 'cricket'},
-  { id: 5, title: 'baseball'},
-];
+const getCompetitionsBySportId = (sportId) => {
+  return competitions
+          .filter(c => c.sportId === sportId)
+          .map(c => {
+            return Object.assign({}, c, {
+              eventCount: events
+                .filter(e => e.competitionId === c.id)
+                .length
+            });
+          });
+}
 
-const getCompetitionsBySportId =
-  sportId => allCompetitions.filter(c => c.sportId === sportId);
+const getSports = () => sports;    
 
 module.exports = {
-  allSports,
+  getSports,
   getCompetitionsBySportId,
 };
