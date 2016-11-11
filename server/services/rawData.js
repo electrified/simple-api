@@ -37,7 +37,7 @@ competitions.forEach((competition, competitionIndex) => { // each competition
 
     events.push({
       id,
-      title: `Event ${eventIndex}`,
+      title: `${competition.title} - Event ${eventIndex}`,
       competitionId: competition.id,
       date: date, 
       time: date,       
