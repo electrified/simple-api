@@ -5,8 +5,8 @@ const events = require('../rawData').events;
 
 const getCompetitions = () => {
   /**
-   * All competitions, with event count in order to enable/disable toggle. 
-   */ 
+   * All competitions, with event count in order to enable/disable toggle.
+   */
   return competitions.map(c => {
     return Object.assign({}, c, {
       eventCount: events
@@ -18,19 +18,21 @@ const getCompetitions = () => {
 
 const getCompetition = (id) => {
   /**
-   * Competition with events and markets 
-   */ 
-  return competitions
+   * Competition with events and markets
+   */
+  const comps = competitions
     .filter(c => c.id === id)
     .map(c => {
       return Object.assign({}, c, {
         events: events
-                  .filter(e => e.competitionId === c.id)                      
+                  .filter(e => e.competitionId === c.id)
+      });
     });
-  })
+
+  return comps ? comps[0] : undefined;
 }
 
-module.exports = {  
+module.exports = {
   getCompetitions,
   getCompetition,
 }

@@ -9,7 +9,14 @@ competitionsRouter.get('/', (req, res) => {
 competitionsRouter.get('/:id', (req, res) => {
   const id = +req.params.id;
   res.header('Access-Control-Allow-Origin', "*");
-  res.status(200).json(compsRepo.getCompetition(id));
+
+  const competition = compsRepo.getCompetition(id);
+  if (competition) {
+    res.status(200).json(competition);
+    return;
+  }
+
+  res.status(200).json([]);
 });
 
 module.exports = competitionsRouter;
