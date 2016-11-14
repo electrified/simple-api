@@ -78,8 +78,6 @@ competitions.forEach((competition, competitionIndex) => { // each competition
   });
 });
 
-console.log(events);
-
 /**
  * Generate markets - every event has 3 markets, say.
  */
