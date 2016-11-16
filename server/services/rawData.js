@@ -32,12 +32,12 @@ const today = new Date().getDay();
 // cricket thursday to monday
 // tennis weekdays
 const football = [0,2,3,6];
-const tennis = [1,2,3,4,5];
 const cricket = [0,1,4,5,6];
+const tennis = [1,2,3,4,5];
 
 competitions.forEach((competition, competitionIndex) => { // each competition
 
-  // except League 1 & Queens.
+  // except League 1 & Queens, which have none
   if (competition.id === 3 || competition.id === 6) return;
 
   let sportDates;
