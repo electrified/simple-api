@@ -11,10 +11,10 @@ const getCompetitions = () => {
     return Object.assign({}, c, {
       eventCount: events
                     .filter(e => e.competitionId === c.id)
-                    .length
+                    .length,
     });
-  })
-}
+  });
+};
 
 const getCompetition = (id) => {
   /**
@@ -25,14 +25,14 @@ const getCompetition = (id) => {
     .map(c => {
       return Object.assign({}, c, {
         events: events
-                  .filter(e => e.competitionId === c.id)
+                  .filter(e => e.competitionId === c.id),
       });
     });
 
   return comps ? comps[0] : undefined;
-}
+};
 
 module.exports = {
   getCompetitions,
   getCompetition,
-}
+};

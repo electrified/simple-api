@@ -35,7 +35,7 @@ const football = [0,2,3,6];
 const cricket = [0,1,4,5,6];
 const tennis = [1,2,3,4,5];
 
-competitions.forEach((competition, competitionIndex) => { // each competition
+competitions.forEach((competition) => { // each competition
 
   // except League 1 & Queens, which have none
   if (competition.id === 3 || competition.id === 6) return;
@@ -91,4 +91,4 @@ module.exports = {
   competitions,
   events,
   markets,
-}
+};
