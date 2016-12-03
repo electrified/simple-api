@@ -6,7 +6,10 @@ module.exports = function (app) {
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
+    // add a token delay to each request
+    setTimeout(() => {
+      next();
+    }, 1000);
   });
 
   app.use('/sports', sportsRouter);

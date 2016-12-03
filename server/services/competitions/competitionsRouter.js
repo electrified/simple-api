@@ -8,7 +8,6 @@ competitionsRouter.get('/', (req, res) => {
 
 competitionsRouter.get('/:id', (req, res) => {
   const id = +req.params.id;
-  res.header('Access-Control-Allow-Origin', "*");
 
   const competition = compsRepo.getCompetition(id);
   if (competition) {

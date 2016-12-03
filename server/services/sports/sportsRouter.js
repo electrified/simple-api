@@ -8,7 +8,6 @@ sportsRouter.get('/', (req, res) => {
 
 sportsRouter.get('/:id/competitions', (req, res) => {
   const sportId = +req.params.id;
-  res.header('Access-Control-Allow-Origin', "*");
   res.status(200).json(sportsRepo.getCompetitionsBySportId(sportId));
 });
 
