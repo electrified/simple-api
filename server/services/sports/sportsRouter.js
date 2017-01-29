@@ -2,13 +2,14 @@ const sportsRouter = require('express').Router();
 const sportsRepo = require('./sportsRepository');
 
 sportsRouter.get('/', (req, res) => {
-  res.header('Access-Control-Allow-Origin', "*");
-  res.status(200).json(sportsRepo.getSports());
+  const sports = sportsRepo.getSports();
+  res.status(200).json(sports);
 });
 
 sportsRouter.get('/:id/competitions', (req, res) => {
   const sportId = +req.params.id;
-  res.status(200).json(sportsRepo.getCompetitionsBySportId(sportId));
+  const sportCompetitions = sportsRepo.getCompetitionsBySportId(sportId);
+  res.status(200).json(sportCompetitions);
 });
 
 module.exports = sportsRouter;

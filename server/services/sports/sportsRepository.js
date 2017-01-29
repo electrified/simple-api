@@ -10,7 +10,7 @@ const getCompetitionsBySportId = (sportId) => {
             return Object.assign({}, c, {
               eventCount: events
                 .filter(e => e.competitionId === c.id)
-                .length,
+                .length
             });
           });
 };

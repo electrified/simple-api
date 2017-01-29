@@ -11,7 +11,7 @@ const getCompetitions = () => {
     return Object.assign({}, c, {
       eventCount: events
                     .filter(e => e.competitionId === c.id)
-                    .length,
+                    .length
     });
   });
 };
@@ -25,7 +25,7 @@ const getCompetition = (id) => {
     .map(c => {
       return Object.assign({}, c, {
         events: events
-                  .filter(e => e.competitionId === c.id),
+                  .filter(e => e.competitionId === c.id)
       });
     });
 

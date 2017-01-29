@@ -64,7 +64,7 @@ competitions.forEach((competition) => { // each competition
       id,
       title: `${competition.title} - Event ${eventIndex}`,
       competitionId: competition.id,
-      date: date.toLocaleDateString(),
+      date: date.toDateString(),
       time: date.toLocaleTimeString(),
     });
 
