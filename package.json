@@ -1,7 +1,7 @@
 {
-  "name": "rest-catlogue",
+  "name": "simple-api",
   "version": "1.0.0",
-  "description": "Catalog Rest API",
+  "description": "Simple API end point for various test projects",
   "main": "server.js",
   "scripts": {
     "start": "node server",
@@ -14,12 +14,10 @@
   },
   "devDependencies": {
     "body-parser": "^1.15.1",
-    "concurrently": "^2.2.0",
     "eslint": "^2.11.0",
     "eslint-plugin-import": "^1.8.1",
     "express": "^4.13.4",
-    "method-override": "^2.3.6",
-    "pre-commit": "^1.1.3"
+    "method-override": "^2.3.6"
   },
   "repository": {
   },

@@ -1,5 +1,4 @@
-const sportsRouter = require('../services/sports/sportsRouter');
-const competitionsRouter = require('../services/competitions/competitionsRouter');
+const cyclejsRouter = require('../services/cyclejs/router');
 
 module.exports = function (app) {
 
@@ -13,8 +12,7 @@ module.exports = function (app) {
     }, 1000);
   });
 
-  app.use('/sports', sportsRouter);
-  app.use('/competitions', competitionsRouter);
+  app.use('/cyclejs', cyclejsRouter);
 
   app.use('*', (req, res) => {
     res.sendStatus(404);
