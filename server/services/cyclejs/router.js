@@ -1,17 +1,17 @@
 const cyclejsRouter = require('express').Router();
 
-cyclejsRouter.get('/login', (req, res) => {
+cyclejsRouter.get('/account-details', (req, res) => {
   res.status(200).json({
     loggedIn: true,
     name: 'Graham',
-    balance: 100
+    balance: 1000
   });
 });
 
-cyclejsRouter.get('/bet', (req, res) => {
+cyclejsRouter.get('/place-bet', (req, res) => {
   res.status(200).json({
     success: true,
-    stake: 5,
+    stake: Math.round(Math.random() * 10),
   });
 });
 
