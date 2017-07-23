@@ -10,8 +10,7 @@
   "pre-commit": [
     "eslint"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "body-parser": "^1.15.1",
     "eslint": "^2.11.0",
@@ -19,8 +18,7 @@
     "express": "^4.13.4",
     "method-override": "^2.3.6"
   },
-  "repository": {
-  },
+  "repository": {},
   "author": "Graham Neilson",
   "license": "ISC"
 }
