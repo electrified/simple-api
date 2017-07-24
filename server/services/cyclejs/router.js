@@ -1,7 +1,7 @@
 const cyclejsRouter = require('express').Router();
-const calcioTop = require('../../data/skybet/calcio-top');
-const tennisTop = require('../../data/skybet/tennis-top');
-const basketTop = require('../../data/skybet/basket-top');
+const calcioTop = require('../../data/calcio-top');
+const tennisTop = require('../../data/tennis-top');
+const basketTop = require('../../data/basket-top');
 
 cyclejsRouter.get('/account-details', (req, res) => {
   res.status(200).json({
