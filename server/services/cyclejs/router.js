@@ -11,10 +11,10 @@ cyclejsRouter.get('/account-details', (req, res) => {
   });
 });
 
-cyclejsRouter.get('/place-bet', (req, res) => {
+cyclejsRouter.post('/place-bet', (req, res) => {
   res.status(200).json({
     success: true,
-    stake: Math.round(Math.random() * 10),
+    stake: parseInt(req.body.stake),
   });
 });
 
