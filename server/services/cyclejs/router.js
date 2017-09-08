@@ -7,7 +7,8 @@ cyclejsRouter.get('/account-details', (req, res) => {
   res.status(200).json({
     loggedIn: true,
     name: 'Graham',
-    balance: 1000
+    balance: 1000,
+    lastLogin: '22/08/2017 14:32',
   });
 });
 
