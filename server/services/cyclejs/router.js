@@ -19,15 +19,27 @@ cyclejsRouter.post('/place-bet', (req, res) => {
   });
 });
 
-cyclejsRouter.get('/catalog/calcio/top', (req, res) => {
+cyclejsRouter.get('/catalog/calcio', (req, res) => {
   res.status(200).json(calcioTop);
 });
 
-cyclejsRouter.get('/catalog/tennis/top', (req, res) => {
+cyclejsRouter.get('/catalog/tennis', (req, res) => {
   res.status(200).json(tennisTop);
 });
 
-cyclejsRouter.get('/catalog/basket/top', (req, res) => {
+cyclejsRouter.get('/catalog/basket', (req, res) => {
+  res.status(200).json(basketTop);
+});
+
+cyclejsRouter.get('/catalog/calcio/competitions', (req, res) => {
+  res.status(200).json(calcioTop);
+});
+
+cyclejsRouter.get('/catalog/tennis/competitions', (req, res) => {
+  res.status(200).json(tennisTop);
+});
+
+cyclejsRouter.get('/catalog/basket/competitions', (req, res) => {
   res.status(200).json(basketTop);
 });
 
