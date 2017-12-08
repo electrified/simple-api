@@ -31,4 +31,17 @@ cyclejsRouter.get('/catalog/basket/top', (req, res) => {
   res.status(200).json(basketTop);
 });
 
+cyclejsRouter.get('/catalog/:sport/:competition', (req, res) => {
+  const comp = req.params.competition;
+  const sport = req.params.sport;
+
+  res.status(200).json({
+    data: {
+      sport: sport,
+      comp: comp,
+    }
+  });
+});
+
+
 module.exports = cyclejsRouter;
