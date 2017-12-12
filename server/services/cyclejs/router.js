@@ -31,6 +31,20 @@ cyclejsRouter.get('/catalog/basket', (req, res) => {
   res.status(200).json(basketTop);
 });
 
+// cycle-catalog routes
+cyclejsRouter.get('/catalog/calcio/top', (req, res) => {
+  res.status(200).json(calcioTop);
+});
+
+cyclejsRouter.get('/catalog/tennis/top', (req, res) => {
+  res.status(200).json(tennisTop);
+});
+
+cyclejsRouter.get('/catalog/basket/top', (req, res) => {
+  res.status(200).json(basketTop);
+});
+// end cycle-catalog specifics / backward compat
+
 cyclejsRouter.get('/catalog/calcio/competitions', (req, res) => {
   res.status(200).json(calcioTop);
 });
@@ -54,6 +68,5 @@ cyclejsRouter.get('/catalog/:sport/:competition', (req, res) => {
     }
   });
 });
-
 
 module.exports = cyclejsRouter;
