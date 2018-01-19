@@ -9,7 +9,7 @@ module.exports = function (app) {
     // add a delay to each request for authentic slowness
     setTimeout(() => {
       next();
-    }, 1000);
+    }, 0);
   });
 
   app.use('/cyclejs', cyclejsRouter);
