@@ -11,9 +11,9 @@
     "sourceType": "module"
   },
   "rules": {
+    "indent": ["error", "tab"],
     "no-console": 0,
     "comma-dangle": ["error", "only-multiline"],
-    "indent": ["error", 2],
-    "semi": ["error", "always"]
+    "semi": ["error", "never"]
   }
 }
