@@ -5,20 +5,22 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-		"eslint": "eslint . --ext .js --ignore-path .eslintignore --cache",
-		"ssh": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46",
-		"rmRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'rm -rf simple-api'",
-		"createRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'mkdir simple-api'",
-		"resetRemote": "npm run rmRemote & npm run createRemote",
-		"copyServer": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ./server ec2-user@18.191.126.46:/home/ec2-user/simple-api/",
-		"copyPackage": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ./packag* ec2-user@18.191.126.46:/home/ec2-user/simple-api",
-		"copyEnv": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ../simple-api/.env.prod ec2-user@18.191.126.46:/home/ec2-user/simple-api/.env",
+    "eslint": "eslint . --ext .js --ignore-path .eslintignore --cache",
+    "ssh": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46",
+    "rmRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'rm -rf simple-api'",
+    "createRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'mkdir simple-api'",
+    "resetRemote": "npm run rmRemote & npm run createRemote",
+    "copyServer": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ./server ec2-user@18.191.126.46:/home/ec2-user/simple-api/",
+    "copyPackage": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ./packag* ec2-user@18.191.126.46:/home/ec2-user/simple-api",
+    "copyEnv": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ../simple-api/.env.prod ec2-user@18.191.126.46:/home/ec2-user/simple-api/.env",
     "copyToProd": "npm run copyServer & npm run copyPackage & npm run copyEnv"
   },
   "pre-commit": [
     "eslint"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "socket.io": "^2.1.1"
+  },
   "devDependencies": {
     "body-parser": "^1.15.1",
     "eslint": "^2.11.0",
