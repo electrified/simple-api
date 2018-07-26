@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "eslint": "eslint . --ext .js --ignore-path .eslintignore --cache",
-    "ssh": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46",
+    "ssh": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.130.60.136",
     "rmRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'rm -rf simple-api'",
     "createRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'mkdir simple-api'",
     "resetRemote": "npm run rmRemote & npm run createRemote",
@@ -19,14 +19,14 @@
     "eslint"
   ],
   "dependencies": {
-    "socket.io": "^2.1.1"
-  },
-  "devDependencies": {
-    "body-parser": "^1.15.1",
-    "eslint": "^2.11.0",
-    "eslint-plugin-import": "^1.8.1",
+		"socket.io": "^2.1.1",
+		"body-parser": "^1.15.1",
     "express": "^4.13.4",
     "method-override": "^2.3.6"
+  },
+  "devDependencies": {
+    "eslint": "^2.11.0",
+    "eslint-plugin-import": "^1.8.1"
   },
   "repository": {},
   "author": "Graham Neilson",

@@ -1,18 +1,14 @@
-const app = require('./app')
-const port = 1234
+const {server, io} = require('./app')
+const {runLiveSports} = require('./liveSports')
+const port = 8000
 
-const server = require('http').createServer(app)
-var io = require('socket.io')(server)
-
-app.listen(port)
+server.listen(port)
 
 io.on('connection', function (client) {
-  console.log('Client connected...')
-
-  client.on('join', function (data) {
-    console.log(data)
-  })
-
+	console.log('Client connected...')
+	console.log(client)
 })
+
+runLiveSports(io)
 
 console.log('Server listening on port: ' + port)

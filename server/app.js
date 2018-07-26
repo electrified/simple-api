@@ -2,6 +2,9 @@ const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
+const server = require('http').createServer(app)
+// const io = require('socket.io')(server, {'transports': ['websocket', 'polling']})
+const io = require('socket.io')(server)
 
 const applyRoutes = require('./routes')
 
@@ -10,12 +13,12 @@ app.use(bodyParser.json())
 
 // parse application/vnd.api+json as json
 app.use(bodyParser.json({
-	type: 'application/vnd.api+json',
+	type: 'application/vnd.api+json'
 }))
 
 // parse application/x-www-tf-form-urlencoded
 app.use(bodyParser.urlencoded({
-	extended: true,
+	extended: true
 }))
 
 // Enable simulation of HTTP methods other than GET and POST ie simulate DELETE, PUT
@@ -25,4 +28,7 @@ app.use(methodOverride('X-HTTP-Method-Override'))
 // instantiate routes
 applyRoutes(app)
 
-module.exports = app
+module.exports = {
+	server,
+	io,
+}
