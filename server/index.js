@@ -15,7 +15,4 @@ io.on('connection', function (client) {
 	})
 })
 
-
-
-
 console.log('Server listening on port: ' + port)
