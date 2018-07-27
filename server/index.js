@@ -9,9 +9,13 @@ server.listen(port)
 
 io.on('connection', function (client) {
 	console.log('Client connected...')
-	console.log(client)
+
+	client.on('liveSportsConfig', function(liveSportsConfig){
+		liveSports.runLiveSports(io, liveSportsConfig)
+	})
 })
 
-liveSports.runLiveSports(io)
+
+
 
 console.log('Server listening on port: ' + port)
