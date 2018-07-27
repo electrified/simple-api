@@ -6,13 +6,13 @@
   "scripts": {
     "start": "node server",
     "eslint": "eslint . --ext .js --ignore-path .eslintignore --cache",
-    "ssh": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.130.60.136",
-    "rmRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'rm -rf simple-api'",
-    "createRemote": "ssh -i ../../keys/graham-neilson-sbg-ec2.pem ec2-user@18.191.126.46 'mkdir simple-api'",
+    "ssh": "ssh -i ~/.ssh/graham-neilson-macbook.pem ec2-user@18.130.224.107",
+    "rmRemote": "ssh -i ~/.ssh/graham-neilson-macbook.pem ec2-user@18.130.224.107 'rm -rf simple-api'",
+    "createRemote": "ssh -i ~/.ssh/graham-neilson-macbook.pem ec2-user@18.130.224.107 'mkdir simple-api'",
     "resetRemote": "npm run rmRemote & npm run createRemote",
-    "copyServer": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ./server ec2-user@18.191.126.46:/home/ec2-user/simple-api/",
-    "copyPackage": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ./packag* ec2-user@18.191.126.46:/home/ec2-user/simple-api",
-    "copyEnv": "scp -rp -i ../../keys/graham-neilson-sbg-ec2.pem ../simple-api/.env.prod ec2-user@18.191.126.46:/home/ec2-user/simple-api/.env",
+    "copyServer": "scp -rp -i ~/.ssh/graham-neilson-macbook.pem ./server ec2-user@18.130.224.107:/home/ec2-user/simple-api/",
+    "copyPackage": "scp -rp -i ~/.ssh/graham-neilson-macbook.pem ./packag* ec2-user@18.130.224.107:/home/ec2-user/simple-api",
+    "copyEnv": "scp -rp -i ~/.ssh/graham-neilson-macbook.pem ../simple-api/.env.prod ec2-user@18.130.224.107:/home/ec2-user/simple-api/.env",
     "copyToProd": "npm run copyServer & npm run copyPackage & npm run copyEnv"
   },
   "pre-commit": [

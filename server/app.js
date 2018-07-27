@@ -3,7 +3,6 @@ const app = express()
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const server = require('http').createServer(app)
-// const io = require('socket.io')(server, {'transports': ['websocket', 'polling']})
 const io = require('socket.io')(server)
 
 const applyRoutes = require('./routes')

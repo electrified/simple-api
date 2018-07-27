@@ -1,6 +1,9 @@
-const {server, io} = require('./app')
-const {runLiveSports} = require('./liveSports')
+const app = require('./app')
+const liveSports = require('./liveSports')
+
 const port = 8000
+const server = app.server
+const io = app.io
 
 server.listen(port)
 
@@ -9,6 +12,6 @@ io.on('connection', function (client) {
 	console.log(client)
 })
 
-runLiveSports(io)
+liveSports.runLiveSports(io)
 
 console.log('Server listening on port: ' + port)
