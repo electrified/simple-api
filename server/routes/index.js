@@ -19,7 +19,7 @@ module.exports = function (app) {
 		const urlSegments = req.originalUrl.split('/')
 
 		if (!urlSegments || urlSegments.length < 3 ||
-			['calcio', 'tennis', 'basket'].indexOf(urlSegments[2]) < 0) {
+			['calcio', 'tennis', 'basket', 'rugby'].indexOf(urlSegments[2]) < 0) {
 			res.sendStatus(404)
 			return
 		}
